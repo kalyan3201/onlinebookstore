@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "subhashrokkala/onlinebookstore"
+        IMAGE_NAME = "pavan/onlinebookstore"
         CONTAINER_NAME = "onlinebookstore"
         PORT = "2815"
     }
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Push Image to DockerHub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh '''
                     echo $PASS | docker login -u $USER --password-stdin
                     docker push $IMAGE_NAME:latest
