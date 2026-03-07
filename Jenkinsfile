@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'master', credentialsId: 'gitloginCred', url: 'https://github.com/Subhash-Rokkala/onlinebookstore.git'
+                git branch: 'master', url: 'https://github.com/kalyan3201/onlinebookstore.git'
             }
         }
 
