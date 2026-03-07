@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "pavan/onlinebookstore"
+        IMAGE_NAME = "dockerhub"
         CONTAINER_NAME = "onlinebookstore"
         PORT = "2815"
     }
